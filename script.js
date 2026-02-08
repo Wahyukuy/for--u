@@ -24,6 +24,28 @@ function terimaKasih() {
     window.location.href = url;
 }
 
+function lariLari() {
+    const btn = document.getElementById('btnTidak');
+    
+    // Kita buat area lari yang lebih luas tapi tetap di dalam layar
+    // window.innerWidth/Height dikurangi ukuran tombol supaya tidak keluar layar
+    const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+    
+    // Memberikan transisi instan agar tidak sempat tertekan
+    btn.style.position = 'fixed';
+    btn.style.transition = 'none'; // Biar geraknya secepat kilat
+    btn.style.left = x + 'px';
+    btn.style.top = y + 'px';
+    btn.style.zIndex = '999'; // Pastikan dia selalu di paling atas
+}
+
+// Tambahan: Cegah klik paksa kalau user pakai teknik tahan lama (long press)
+document.getElementById('btnTidak').addEventListener('click', function(e) {
+    e.preventDefault();
+    lariLari(); // Kalau entah gimana dia berhasil klik, tetap suruh lari!
+});
+
 // Fungsi membuat animasi love jatuh
 function createHeart() {
     const heart = document.createElement('div');
