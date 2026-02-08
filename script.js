@@ -1,5 +1,5 @@
 // GANTI NOMOR WA KAMU DI SINI (Gunakan kode negara 62)
-const nomorWA = "6282252126722"; 
+const nomorWA = "6281356154664"; 
 
 // Fungsi bikin tombol "Tidak" kabur-kaburan
 function lariLari() {
